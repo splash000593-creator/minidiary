@@ -1,0 +1,92 @@
+/** Minidiary · gothic ins visual system */
+page {
+  min-height: 100%;
+  background: #f7f0e8;
+  color: #24191d;
+  font-size: 28rpx;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+page::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: .46;
+  background-image: radial-gradient(circle at 8% 3%, rgba(112, 29, 49, .11) 0, rgba(112, 29, 49, 0) 28%), radial-gradient(circle at 92% 30%, rgba(190, 143, 116, .16) 0, rgba(190, 143, 116, 0) 29%);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 251, 246, .9);
+  border: 1rpx solid rgba(66, 30, 41, .12);
+  border-radius: 30rpx 30rpx 20rpx 20rpx;
+  padding: 30rpx;
+  margin: 22rpx 24rpx;
+  box-shadow: 0 14rpx 34rpx rgba(54, 23, 33, .07), inset 0 1rpx 0 rgba(255, 255, 255, .9);
+  box-sizing: border-box;
+}
+.card::before {
+  content: "✦";
+  position: absolute;
+  right: 20rpx;
+  top: 12rpx;
+  color: rgba(118, 27, 51, .15);
+  font-family: Georgia, serif;
+  font-size: 35rpx;
+}
+.card-title {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22rpx;
+  color: #3d1826;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 33rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1rpx;
+  margin-left: 18rpx;
+  background: linear-gradient(90deg, rgba(115, 29, 52, .24), transparent);
+}
+
+.btn {
+  border: 0;
+  border-radius: 18rpx;
+  font-size: 29rpx;
+  line-height: 88rpx;
+  letter-spacing: 3rpx;
+  text-align: center;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.btn::after { border: 0; }
+.btn-primary {
+  color: #fff8f4;
+  background: linear-gradient(135deg, #54172a, #8f3148 68%, #b36562);
+  box-shadow: 0 12rpx 22rpx rgba(87, 23, 42, .2);
+}
+.btn-primary:active { opacity: .85; transform: translateY(2rpx); }
+.btn-ghost { color: #76213a; background: #fffaf4; border: 1rpx solid #9a5262; }
+.btn-block { display: block; width: 100%; }
+
+.amount-income { color: #3c7f62; font-weight: 700; }
+.amount-expense { color: #9e3146; font-weight: 700; }
+.empty { color: #a28c8a; text-align: center; font-size: 25rpx; line-height: 1.9; }
+.empty::before { content: "☾"; display: block; color: #9f5062; font: 42rpx Georgia, serif; }
+.page-pad { min-height: 100%; padding-bottom: 58rpx; }
+
+
+
+.date-filter { display: flex; align-items: center; justify-content: space-between; margin: 18rpx 24rpx 2rpx; }
+.date-filter-btn { padding: 10rpx 20rpx; color: #76233c; background: #fff7ef; border: 1rpx solid #ead8d3; border-radius: 14rpx; font-size: 23rpx; }
+.date-filter-clear { padding: 10rpx 16rpx; color: #8c3148; font-size: 23rpx; }

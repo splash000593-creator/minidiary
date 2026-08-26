@@ -1,0 +1,8 @@
+<view class="page-pad form">
+  <view class="type-switch"><view class="type-option {{type === 'expense' ? 'selected-expense' : ''}}" data-type="expense" bindtap="chooseType">支出</view><view class="type-option {{type === 'income' ? 'selected-income' : ''}}" data-type="income" bindtap="chooseType">收入</view></view>
+  <view class="amount-panel"><text class="currency">¥</text><input class="amount-input" type="digit" focus placeholder="0.00" value="{{amount}}" bindinput="inputAmount"/></view>
+  <view class="card"><view class="field-title">分类</view><view class="category-grid"><view class="category" wx:for="{{categoryList}}" wx:key="name" data-name="{{item.name}}" bindtap="chooseCategory"><view class="category-icon {{category === item.name ? 'chosen' : ''}}">{{item.icon}}</view><text>{{item.name}}</text></view></view></view>
+  <view class="card fields"><view class="field"><text>日期</text><picker mode="date" value="{{date}}" bindchange="chooseDate"><view>{{date}} ›</view></picker></view><view class="field"><text>时间</text><picker mode="time" value="{{time}}" bindchange="chooseTime"><view>{{time}} ›</view></picker></view><view class="field note-field"><text>备注</text><input placeholder="选填，记录一些细节" value="{{note}}" maxlength="50" bindinput="inputNote"/></view></view>
+  <button class="btn btn-primary btn-block save" bindtap="save">保存</button>
+  <button wx:if="{{canDelete}}" class="delete" bindtap="remove">删除这条记录</button>
+</view>

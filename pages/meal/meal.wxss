@@ -1,0 +1,32 @@
+.meal-page { padding-bottom:80rpx; }
+.header { position:relative; padding:60rpx 34rpx 15rpx; }
+.header::before { content:"FOOD DIARY"; display:block; margin-bottom:6rpx; color:#a25466; font:20rpx Georgia,serif; letter-spacing:6rpx; }
+.header::after { content:"☾  ✦"; position:absolute; right:37rpx; top:47rpx; color:#813147; font:27rpx Georgia,serif; letter-spacing:6rpx; }
+.title { color:#3b1625; font:700 44rpx Georgia,"Songti SC",serif; }
+.date { margin-top:7rpx; color:#998180; font-size:24rpx; }
+.meal-intro { display:flex; justify-content:center; align-items:center; gap:12rpx; margin:0 24rpx 21rpx; padding:12rpx; color:#8a626b; background:#fff7ef; border:1rpx solid #efdad2; border-radius:18rpx; font-size:21rpx; }
+.intro-star { color:#ad455d; font:25rpx Georgia,serif; }
+.meal-card { position:relative; margin:22rpx 24rpx; padding:29rpx; background:rgba(255,251,247,.94); border:1rpx solid #e5d1cc; border-radius:30rpx 30rpx 19rpx 19rpx; box-shadow:0 13rpx 29rpx rgba(53,20,31,.06); }
+.meal-card::after { content:""; position:absolute; right:22rpx; bottom:17rpx; width:34rpx; height:34rpx; border-right:1rpx solid rgba(138,49,72,.15); border-bottom:1rpx solid rgba(138,49,72,.15); border-radius:0 0 15rpx 0; }
+.meal-show,.meal-edit { position:relative; z-index:1; }
+.meal-top { display:flex; align-items:center; justify-content:space-between; }
+.meal-icon { display:inline-block; margin-right:13rpx; font-size:40rpx; vertical-align:middle; }
+.meal-name { color:#46232d; font:700 30rpx Georgia,"Songti SC",serif; }
+.edit { color:#8c3148; font-size:24rpx; }
+.food { margin:19rpx 0 4rpx; color:#514047; font-family:Georgia,"Songti SC",serif; font-size:28rpx; line-height:1.75; }
+.placeholder { color:#b9a3a1; font-size:24rpx; }
+.photos,.photo-grid { display:flex; flex-wrap:wrap; gap:13rpx; margin-top:18rpx; }
+.photos image,.photo-wrap,.add-photo { width:178rpx; height:178rpx; border-radius:17rpx; }
+.photos image { border:1rpx solid #ebd8d3; box-shadow:0 5rpx 14rpx rgba(81,34,46,.07); }
+.photo-caption { margin-top:12rpx; color:#a58689; font-size:20rpx; }
+.food-input { width:100%; min-height:130rpx; margin-top:22rpx; padding:18rpx; color:#4e343a; background:#fff9f4; border:1rpx solid #ead5d0; border-radius:17rpx; box-sizing:border-box; font-size:27rpx; line-height:1.7; }
+.photo-title { display:flex; justify-content:space-between; margin-top:22rpx; color:#754152; font:700 24rpx Georgia,"Songti SC",serif; }
+.photo-title text:last-child { color:#b08e91; font-weight:400; }
+.photo-wrap { position:relative; }
+.photo-wrap image { width:100%; height:100%; border:1rpx solid #ebd8d3; border-radius:17rpx; }
+.add-photo { display:flex; flex-direction:column; align-items:center; justify-content:center; color:#a47e85; background:#fcf0ea; border:1rpx dashed #cdaeb0; }
+.add-photo .plus { color:#90384e; font:41rpx/1 Georgia,serif; }
+.add-photo text:last-child { margin-top:8rpx; font-size:20rpx; }
+.remove { position:absolute; right:-10rpx; top:-10rpx; width:36rpx; height:36rpx; color:#fff; background:#6d243a; border-radius:50%; box-shadow:0 3rpx 8rpx rgba(72,21,36,.25); font:28rpx/34rpx Arial,sans-serif; text-align:center; }
+.photo-tip { margin-top:13rpx; color:#b09796; font-size:20rpx; }
+.save { margin-top:27rpx; }

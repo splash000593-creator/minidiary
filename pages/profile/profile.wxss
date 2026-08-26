@@ -1,0 +1,31 @@
+.profile-head { display:flex; align-items:center; padding:64rpx 36rpx 23rpx; }
+.avatar-shell { position:relative; flex:0 0 auto; width:108rpx; height:108rpx; margin-right:22rpx; padding:5rpx; background:linear-gradient(135deg,#fffaf3,#e6c3ca); border:1rpx solid #d39aa8; border-radius:50%; box-shadow:0 10rpx 24rpx rgba(104,36,57,.18); }
+.avatar-img,.avatar-text { width:100%; height:100%; border-radius:50%; }
+.avatar-img { display:block; }
+.avatar-text { color:#fff9f5; background:linear-gradient(135deg,#54172a,#a83f58); font:700 51rpx/108rpx Georgia,serif; text-align:center; }
+.avatar-sparkle { position:absolute; right:-8rpx; top:-12rpx; color:#8b3148; font:31rpx Georgia,serif; }
+.profile-copy { min-width:0; flex:1; }
+.eyebrow { color:#a25466; font:19rpx Georgia,serif; letter-spacing:5rpx; }
+.name { overflow:hidden; margin-top:5rpx; color:#3b1625; font:700 38rpx Georgia,"Songti SC",serif; letter-spacing:1rpx; text-overflow:ellipsis; white-space:nowrap; }
+.tagline { margin-top:4rpx; color:#9d8584; font-size:23rpx; }
+.login-card { display:flex; align-items:center; margin:0 24rpx 18rpx; padding:20rpx 20rpx 20rpx 17rpx; color:#5d303c; background:linear-gradient(135deg,#fff7ed,#f4e1df); border:1rpx solid #e1bdc1; border-radius:26rpx 26rpx 17rpx 17rpx; box-shadow:0 10rpx 24rpx rgba(77,28,43,.07); }
+.login-ornament { width:65rpx; color:#8a3148; font:43rpx/1 Georgia,serif; text-align:center; }
+.login-content { min-width:0; flex:1; padding:0 12rpx 0 4rpx; }
+.login-title { color:#542433; font:700 27rpx Georgia,"Songti SC",serif; }
+.login-desc { margin-top:3rpx; color:#97767a; font-size:20rpx; line-height:1.55; }
+.login-btn { flex:0 0 auto; margin:0; padding:0 17rpx; color:#fffaf5; background:#76233c; border:0; border-radius:16rpx; font-size:23rpx; line-height:62rpx; }
+.login-btn::after { border:0; }
+.account-note,.status { margin:0 26rpx 18rpx; padding:14rpx 19rpx; color:#86515e; background:#f8e7e3; border:1rpx solid #e9cfca; border-radius:14rpx; font-size:23rpx; text-align:center; }
+.account-note { color:#744151; background:#fff7ef; font-size:21rpx; }
+.account-dot { padding:0 9rpx; color:#a43e58; }
+.stats { display:flex; }
+.stats>view { position:relative; flex:1; text-align:center; }
+.stats>view:not(:last-child)::after { content:""; position:absolute; right:0; top:12rpx; width:1rpx; height:50rpx; background:#eadbd5; }
+.stat-num { color:#46232d; font:700 32rpx Georgia,serif; }
+.stat-label { margin-top:5rpx; color:#a18a89; font-size:21rpx; }
+.menu { padding-top:0; padding-bottom:0; }
+.menu-item { display:flex; align-items:center; height:105rpx; border-bottom:1rpx solid #f0e4df; }
+.menu-item:last-child { border:0; }
+.menu-icon { width:68rpx; font-size:34rpx; }
+.menu-title { flex:1; color:#503039; font:27rpx Georgia,"Songti SC",serif; }
+.arrow { color:#9f7580; font:37rpx/1 Georgia,serif; }

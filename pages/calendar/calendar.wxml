@@ -1,0 +1,61 @@
+<view class="page-pad calendar-page">
+  <view class="calendar-header">
+    <view class="calendar-kicker">MINIDIARY · ARCHIVE</view>
+    <view class="calendar-title">生活日历 <text>☾</text></view>
+    <view class="calendar-subtitle">把每个认真生活的日子，轻轻收藏起来。</view>
+  </view>
+
+  <view class="card calendar-card">
+    <view class="month-switcher">
+      <view class="month-arrow" bindtap="changeMonth" data-delta="-1">‹</view>
+      <view class="month-center">
+        <view class="month-kicker">LIFE IN A MONTH</view>
+        <view class="month-label">{{monthLabel}}</view>
+      </view>
+      <view class="month-arrow" bindtap="changeMonth" data-delta="1">›</view>
+    </view>
+
+    <view class="week-row">
+      <text class="week-name" wx:for="{{weekHeaders}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="calendar-week" wx:for="{{calendarWeeks}}" wx:key="index">
+      <view class="calendar-cell {{dayItem.inMonth ? '' : 'outside-month'}} {{dayItem.selected ? 'selected-day' : ''}}" wx:for="{{item}}" wx:for-item="dayItem" wx:key="date" bindtap="selectDate" data-date="{{dayItem.date}}">
+        <view class="day-number {{dayItem.isToday ? 'today-number' : ''}}">{{dayItem.day}}</view>
+        <view class="marker-row">
+          <text wx:if="{{dayItem.hasExpense}}" class="marker marker-expense"></text>
+          <text wx:if="{{dayItem.hasMood}}" class="marker marker-mood"></text>
+          <text wx:if="{{dayItem.hasMeal}}" class="marker marker-meal"></text>
+          <text wx:if="{{dayItem.hasCheckin}}" class="marker marker-checkin"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="calendar-footer">
+      <view class="marker-legend"><text class="legend-dot marker-expense"></text>账目</view>
+      <view class="marker-legend"><text class="legend-dot marker-mood"></text>随笔</view>
+      <view class="marker-legend"><text class="legend-dot marker-meal"></text>三餐</view>
+      <view class="marker-legend"><text class="legend-dot marker-checkin"></text>打卡</view>
+      <view class="today-button" bindtap="backToday">回到今天</view>
+    </view>
+  </view>
+
+  <view class="card day-card">
+    <view class="day-card-head">
+      <view><view class="day-kicker">DAILY TIMELINE</view><view class="day-title">{{selectedLabel}}</view></view>
+    </view>
+    <view class="day-record-text">{{dayRecordText}}</view>
+
+    <block wx:if="{{daySections.length}}">
+      <view class="tl-section" wx:for="{{daySections}}" wx:key="name" wx:for-item="sec">
+        <view class="tl-section-head">{{sec.name}}</view>
+        <view class="tl-item" wx:for="{{sec.list}}" wx:for-item="item" wx:key="id">
+          <view class="tl-time">{{item.time}}</view>
+          <view class="tl-icon">{{item.icon}}</view>
+          <view class="tl-body"><view class="tl-title">{{item.title}}</view><view class="tl-desc">{{item.desc}}</view></view>
+          <view class="tl-extra {{item.colorClass}}">{{item.extra}}</view>
+        </view>
+      </view>
+    </block>
+    <view wx:elif="{{!loading}}" class="empty calendar-empty">留一笔账、写一段心情，<br />让这一天成为专属的收藏吧。</view>
+  </view>
+</view>

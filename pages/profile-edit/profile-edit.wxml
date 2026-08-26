@@ -1,0 +1,15 @@
+<view class="page-pad">
+  <view class="avatar-block" bindtap="chooseAvatar">
+    <view class="avatar-shell big">
+      <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" />
+      <view wx:else class="avatar-text">{{nickName ? nickName.slice(0, 1) : 'M'}}</view>
+    </view>
+    <view class="avatar-hint">点击更换头像</view>
+  </view>
+
+  <view class="card">
+    <view class="field-row"><text class="field-label">昵称</text><input class="field-input" value="{{nickName}}" placeholder="输入你的昵称" maxlength="16" bindinput="inputNickname" /></view>
+  </view>
+
+  <button class="btn btn-primary save" loading="{{saving}}" bindtap="save">保存</button>
+</view>

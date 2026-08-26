@@ -1,0 +1,15 @@
+<view class="page-pad">
+  <view class="intro"><view class="intro-title">写下此刻的心情</view><view class="intro-sub">把平凡的日子，收进自己的小宇宙</view></view>
+  <view class="date-filter">
+    <picker mode="date" value="{{detailDate}}" bindchange="chooseDetailDate">
+      <view class="date-filter-btn">{{detailDate || '选择日期查看'}} ›</view>
+    </picker>
+    <view wx:if="{{detailDate}}" class="date-filter-clear" bindtap="clearDetailDate">查看全部</view>
+  </view>
+  <view wx:if="{{allList.length}}">
+    <view wx:if="{{list.length}}"><view class="mood-card" wx:for="{{list}}" wx:key="_id" data-id="{{item._id}}" bindtap="editItem"><view class="mood-top"><view><text class="mood-icon">{{item.moodIcon || '💭'}}</text><text class="mood-date">{{item.dateLabel}} {{item.time}}</text></view><text wx:if="{{item.locationName}}" class="location">📍 {{item.locationName}}</text></view><view class="mood-content">{{item.content}}</view><view class="photos" wx:if="{{item.imageUrls.length}}"><image wx:for="{{item.imageUrls}}" wx:key="*this" src="{{item}}" mode="aspectFill" data-url="{{item}}" data-urls="{{item.imageUrls}}" catchtap="previewImage"/></view></view></view>
+    <view wx:else class="empty">这一天没有随笔</view>
+  </view>
+  <view wx:elif="{{!loading}}" class="empty large-empty">还没有随笔，写下今天的第一个瞬间吧～</view>
+  <view class="fab" bindtap="addItem">✍️</view>
+</view>

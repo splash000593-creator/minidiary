@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/calendar/calendar",
+    "pages/expense/expense",
+    "pages/expense-edit/expense-edit",
+    "pages/mood/mood",
+    "pages/mood-edit/mood-edit",
+    "pages/meal/meal",
+    "pages/goal/goal",
+    "pages/goal-edit/goal-edit",
+    "pages/profile/profile",
+    "pages/profile-edit/profile-edit",
+    "pages/insight/insight",
+    "pages/insight-edit/insight-edit"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Minidiary",
+    "navigationBarBackgroundColor": "#54172A",
+    "backgroundColor": "#F7F0E8"
+  },
+  "tabBar": {
+    "color": "#9D7D83",
+    "selectedColor": "#76233C",
+    "backgroundColor": "#FFF9F3",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/expense/expense",
+        "text": "记账"
+      },
+      {
+        "pagePath": "pages/mood/mood",
+        "text": "随笔"
+      },
+      {
+        "pagePath": "pages/goal/goal",
+        "text": "目标"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "cloud": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于记录随笔发生的地点"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.content { display: block; width: calc(100% - 48rpx); min-height: 260rpx; margin: 30rpx 24rpx 0; padding: 24rpx; box-sizing: border-box; color: #41252c; background: #fff9f4; border: 1rpx solid #ead5d0; border-radius: 18rpx; font-family: Georgia, "Songti SC", serif; font-size: 29rpx; line-height: 1.8; }
+.save { width: calc(100% - 48rpx); margin: 40rpx 24rpx 0; }
+.delete { display: block; margin: 32rpx auto; color: #9e3146; background: transparent; font-size: 25rpx; }
+.delete::after { border: 0; }

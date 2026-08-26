@@ -1,0 +1,5 @@
+<view class="page-pad">
+  <textarea class="content" placeholder="记录一个简短的体会或经验…" value="{{content}}" bindinput="inputContent" maxlength="500" auto-height />
+  <button class="btn btn-primary save" bindtap="save">保存感悟</button>
+  <view wx:if="{{canDelete}}" class="delete" bindtap="remove">删除</view>
+</view>

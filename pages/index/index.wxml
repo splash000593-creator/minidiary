@@ -1,0 +1,50 @@
+<view class="page-pad">
+  <view class="header">
+    <view class="hello">{{greeting}}</view>
+    <view class="today">{{todayLabel}}</view>
+  </view>
+
+  <view class="daily-note"><text class="daily-note-star">✦</text><text>{{todayNote}}</text><text class="daily-note-star">✦</text></view>
+
+  <view class="card record-card" bindtap="goCalendar">
+    <view class="record-card-top"><view><view class="record-kicker">LIFE CALENDAR</view><view class="record-title">我的生活日历</view></view><view class="record-arrow">›</view></view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">今日收支</view>
+    <view class="money-row">
+      <view class="money-item"><view class="money-num amount-expense">-{{expense}}</view><view class="money-label">支出</view></view>
+      <view class="money-item"><view class="money-num amount-income">+{{income}}</view><view class="money-label">收入</view></view>
+      <view class="money-item"><view class="money-num">{{balance}}</view><view class="money-label">结余</view></view>
+    </view>
+  </view>
+
+  <view class="quick-row">
+    <view class="quick-item" bindtap="goExpense"><view class="quick-icon">💰</view><view class="quick-text">记一笔</view></view>
+    <view class="quick-item" bindtap="goMood"><view class="quick-icon">✍️</view><view class="quick-text">写随笔</view></view>
+    <view class="quick-item" bindtap="goGoal"><view class="quick-icon">🎯</view><view class="quick-text">去打卡</view></view>
+  </view>
+
+  <view class="card">
+    <view class="card-title"><text>今天吃什么</text><text class="card-action" bindtap="goMeal">查看三餐 ›</text></view>
+    <view class="meal-list">
+      <view class="meal-item" wx:for="{{meals}}" wx:key="key" bindtap="goMeal">
+        <view class="meal-icon-wrap"><image wx:if="{{item.imageUrl}}" class="meal-thumb" src="{{item.imageUrl}}" mode="aspectFill" /><text wx:else class="meal-emoji">{{item.icon}}</text></view>
+        <view class="meal-copy"><text class="meal-type">{{item.type}}</text><text class="meal-content {{item.content ? '' : 'meal-empty'}}">{{item.content || '还没记录'}}</text></view>
+        <text class="meal-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title"><text>今天的时间线</text><text class="card-action" bindtap="goCalendar">日历查看 ›</text></view>
+    <block wx:if="{{timeline.length > 0}}">
+      <view class="tl-item" wx:for="{{timeline}}" wx:key="id">
+        <view class="tl-time">{{item.time}}</view><view class="tl-icon">{{item.icon}}</view>
+        <view class="tl-body"><view class="tl-title">{{item.title}}</view><view class="tl-desc">{{item.desc}}</view></view>
+        <view class="tl-extra {{item.colorClass}}">{{item.extra}}</view>
+      </view>
+    </block>
+    <view wx:else class="empty">今天还没有记录，从第一笔开始吧～</view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* 小感悟：延续原版酒红 + 米白视觉 */
+.intro { position: relative; padding: 60rpx 34rpx 22rpx; }
+.intro::before { content: "LITTLE NOTES"; display: block; margin-bottom: 6rpx; color: #a25466; font: 20rpx Georgia, serif; letter-spacing: 6rpx; }
+.intro-title { color: #3b1625; font: 700 43rpx Georgia, "Songti SC", serif; letter-spacing: 2rpx; }
+.intro-sub { margin-top: 7rpx; color: #9c8182; font-size: 24rpx; }
+.insight-card { margin: 22rpx 24rpx; padding: 28rpx; background: rgba(255, 251, 247, .93); border: 1rpx solid #e4cfcb; border-radius: 28rpx 28rpx 16rpx 16rpx; box-shadow: 0 13rpx 29rpx rgba(53, 20, 31, .06); }
+.insight-content { color: #41252c; font-family: Georgia, "Songti SC", serif; font-size: 29rpx; line-height: 1.8; white-space: pre-wrap; word-break: break-all; }
+.insight-meta { margin-top: 16rpx; color: #a18b8b; font-size: 21rpx; }
+.large-empty { padding-top: 180rpx; }
+.fab { position: fixed; right: 36rpx; bottom: 64rpx; width: 108rpx; height: 108rpx; color: #fff; background: linear-gradient(135deg, #54172a, #a64058); border: 4rpx solid #f7e9e3; border-radius: 50%; box-shadow: 0 10rpx 26rpx rgba(81, 20, 39, .32); font-size: 40rpx; line-height: 100rpx; text-align: center; }

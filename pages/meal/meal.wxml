@@ -1,0 +1,39 @@
+<view class="page-pad meal-page">
+  <view class="header">
+    <view class="title">今天吃什么</view>
+    <view class="date">{{dateLabel}}</view>
+  </view>
+
+  <view class="meal-intro">
+    <text class="intro-star">✦</text>
+    <text>好好吃饭，是最可爱的自我照顾</text>
+    <text class="intro-star">✦</text>
+  </view>
+
+  <view class="meal-card" wx:for="{{meals}}" wx:key="key">
+    <view wx:if="{{editing !== item.key}}" class="meal-show" data-key="{{item.key}}" bindtap="editMeal">
+      <view class="meal-top">
+        <view><text class="meal-icon">{{item.icon}}</text><text class="meal-name">{{item.name}}</text></view>
+        <text class="edit">{{item.content || item.imageUrls.length ? '编辑' : '去记录'}} ›</text>
+      </view>
+      <view wx:if="{{item.content}}" class="food">{{item.content}}</view>
+      <view wx:else class="food placeholder">{{item.tip}}</view>
+      <view class="photos" wx:if="{{item.imageUrls.length}}" data-urls="{{item.imageUrls}}" bindtap="previewImages">
+        <image wx:for="{{item.imageUrls}}" wx:key="*this" src="{{item}}" mode="aspectFill" />
+      </view>
+      <view wx:if="{{item.imageUrls.length}}" class="photo-caption">已收下 {{item.imageUrls.length}} 张美食小照片</view>
+    </view>
+
+    <view wx:else class="meal-edit">
+      <view class="meal-top"><view><text class="meal-icon">{{item.icon}}</text><text class="meal-name">记录{{item.name}}</text></view><text class="edit" bindtap="cancelEdit">取消</text></view>
+      <textarea class="food-input" placeholder="吃了什么？写下这一餐的小幸福吧～" auto-height value="{{content}}" bindinput="inputContent" />
+      <view class="photo-title"><text>美食照片</text><text>{{images.length}} / 3</text></view>
+      <view class="photo-grid">
+        <view wx:for="{{images}}" wx:key="url" class="photo-wrap"><image src="{{item.url}}" mode="aspectFill" /><view class="remove" data-index="{{index}}" bindtap="removeImage">×</view></view>
+        <view wx:if="{{images.length < 3}}" class="add-photo" bindtap="chooseImages"><text class="plus">＋</text><text>添加照片</text></view>
+      </view>
+      <view class="photo-tip">可从相册选择，或直接拍下这一餐</view>
+      <button class="btn btn-primary save" loading="{{saving}}" bindtap="saveMeal">收藏这顿{{item.name}}</button>
+    </view>
+  </view>
+</view>

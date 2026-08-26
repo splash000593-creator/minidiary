@@ -1,0 +1,45 @@
+<view class="page-pad">
+  <view class="profile-head">
+    <view class="avatar-shell">
+      <image wx:if="{{user.avatarUrl}}" class="avatar-img" src="{{user.avatarUrl}}" mode="aspectFill" />
+      <view wx:else class="avatar-text">{{avatarLetter}}</view>
+      <view class="avatar-sparkle">✦</view>
+    </view>
+    <view class="profile-copy">
+      <view class="eyebrow">MY LITTLE ARCHIVE</view>
+      <view class="name-row"><view class="name">{{loggedIn ? user.nickName : 'Minidiary'}}</view><view class="edit-link" bindtap="goProfileEdit">✎ 编辑</view></view>
+      <view class="tagline">{{loggedIn ? '你的日常，已被温柔收藏' : '认真生活，温柔记录'}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{!loggedIn}}" class="login-card">
+    <view class="login-ornament">☾</view>
+    <view class="login-content">
+      <view class="login-title">登录你的日记小宇宙</view>
+      <view class="login-desc">授权微信头像与昵称，云端记录会自动归属到当前账号。</view>
+    </view>
+    <button class="login-btn" loading="{{loginLoading}}" bindtap="login">微信登录</button>
+  </view>
+
+  <view wx:else class="account-note">
+    <text class="account-dot">✦</text>
+    已连接当前微信账号，日记仅自己可见
+    <text class="account-dot">✦</text>
+  </view>
+
+
+  <view class="card">
+    <view class="card-title">本月记录</view>
+    <view class="stats">
+      <view><view class="stat-num amount-expense">{{expense}}</view><view class="stat-label">支出</view></view>
+      <view><view class="stat-num amount-income">{{income}}</view><view class="stat-label">收入</view></view>
+      <view><view class="stat-num">{{moodCount}}</view><view class="stat-label">随笔</view></view>
+      <view><view class="stat-num">{{goalCount}}</view><view class="stat-label">目标</view></view>
+    </view>
+  </view>
+
+  <view class="card menu">
+    <view class="menu-item" bindtap="goInsight"><text class="menu-icon">💡</text><text class="menu-title">小感悟</text><text class="arrow">›</text></view>
+    <view class="menu-item" bindtap="about"><text class="menu-icon">💌</text><text class="menu-title">关于 Minidiary</text><text class="arrow">›</text></view>
+  </view>
+</view>

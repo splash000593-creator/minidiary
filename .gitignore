@@ -1,0 +1,18 @@
+# Node
+node_modules/
+miniprogram_npm/
+
+# WeChat DevTools 私密配置
+project.private.config.json
+
+# 本地私有配置（云环境 ID 等）
+utils/config.local.js
+
+# 日志与缓存
+logs/
+*.log
+.DS_Store
+
+# 构建产物
+dist/
+build/

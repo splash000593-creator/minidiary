@@ -1,0 +1,9 @@
+.avatar-block { display: flex; flex-direction: column; align-items: center; padding: 46rpx 0 10rpx; }
+.avatar-shell.big { width: 150rpx; height: 150rpx; padding: 7rpx; margin: 0; background: linear-gradient(135deg, #fffaf3, #e6c3ca); border: 1rpx solid #d39aa8; }
+.avatar-shell.big .avatar-img, .avatar-shell.big .avatar-text { width: 100%; height: 100%; border-radius: 50%; }
+.avatar-shell.big .avatar-text { color: #fff9f5; background: linear-gradient(135deg, #54172a, #a83f58); font: 700 68rpx/136rpx Georgia, serif; text-align: center; }
+.avatar-hint { margin-top: 16rpx; color: #a25466; font-size: 23rpx; }
+.field-row { display: flex; align-items: center; padding: 24rpx 0; }
+.field-label { width: 110rpx; color: #43212a; font-size: 27rpx; }
+.field-input { flex: 1; color: #3b1625; font-size: 27rpx; }
+.save { width: calc(100% - 48rpx); margin: 42rpx 24rpx 0; }
